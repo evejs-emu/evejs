@@ -1,0 +1,8 @@
+AGPL-3.0-only
+
+This project is licensed under the GNU Affero General Public License version 3.
+See: https://www.gnu.org/licenses/agpl-3.0.en.html
+
+No EVE Online client, CCP static data, CCP binaries, CCP artwork, CCP assets,
+patched DLLs, private keys, generated market databases, or generated runtime
+databases are licensed by this file.

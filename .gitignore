@@ -1,0 +1,96 @@
+# Local EVE client copies and CCP-owned/generated artifacts
+/client/
+/_backup/
+/_local/
+/server/src/newDatabase/data/
+/tools/ClientCodeGrabber/Latest/
+/tools/DataSync/source_json/
+/tools/ClientSDE/exports/
+
+# Runtime config and generated certificates/keys
+/evejs.config.local.json
+/tools/ClientSETUP/scripts/EvEJSConfig.bat
+/server/certs/*.pem
+/server/src/_secondary/express/certs/*.pem
+/server/src/_secondary/image/generated/
+*.key
+*.pfx
+*.p12
+
+# Dependencies and build output
+/node_modules/
+/server/node_modules/
+**/node_modules/
+**/target/
+**/dist/
+**/build/
+coverage/
+.nyc_output/
+.cache/
+.pytest_cache/
+**/__pycache__/
+*.py[cod]
+
+# Logs, crash dumps, temp files, and local reports
+/server/logs/
+/server/src/logs/
+/server/src/_secondary/data/chat/
+*.log
+*.dmp
+*.pid
+*.tmp
+*.tmp-*
+*.bak
+*.old
+*.orig
+*.original
+*.rej
+npm-debug*.log
+yarn-error*.log
+pnpm-debug*.log
+hs_err_pid*.log
+
+# Market/runtime databases and caches
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.mdb
+*.ldb
+*.wal
+*.shm
+*.csv
+*.csv.*
+*.bz2
+*.zst
+/externalservices/market-server/data/cache/
+/tools/market-seed/cache/
+/tools/market-seederv2/cache/
+
+# Archives and distributable bundles
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Client binaries/assets and patched DLL material
+*.dll
+*.exe
+*.pyd
+*.stuff
+*.ccp
+manifest.dat
+resfile*
+*.patch.bin
+*.blob
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+.claude/
+.idea/
+.vscode/
+
+# Tool-generated UI assets
+/tools/ConfigEditor/assets/

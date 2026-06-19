@@ -1,0 +1,26 @@
+[network]
+host = "127.0.0.1"
+port = 40120
+
+[rpc]
+enabled = false
+host = "127.0.0.1"
+port = 40121
+
+[storage]
+database_path = "data/bench/market-bench.sqlite"
+
+[runtime]
+cache_station_summaries = true
+cache_system_summaries = true
+preload_system_seed_summaries = false
+station_summary_cache_capacity = 256
+system_summary_cache_capacity = 256
+order_book_cache_capacity = 2048
+read_connection_pool_size = 8
+sqlite_read_cache_size_kib = 131072
+sqlite_mmap_size_mb = 4096
+sqlite_statement_cache_capacity = 512
+
+[logging]
+log_level = "info"

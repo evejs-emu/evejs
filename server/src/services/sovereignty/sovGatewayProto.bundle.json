@@ -1,0 +1,3083 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-09T16:56:13.808Z",
+    "generatedProtoRoot": "tools/ClientCodeGrabber/Latest/eveProto/generated",
+    "entryFiles": [
+      "eve_public/sovereignty/hub/api/requests.proto",
+      "eve_public/sovereignty/hub/api/notices.proto",
+      "eve_public/sovereignty/hub/upgrade/api/requests.proto",
+      "eve_public/sovereignty/hub/upgrade/api/notices.proto",
+      "eve_public/sovereignty/hub/fuel/api/requests.proto",
+      "eve_public/sovereignty/hub/workforce/api/requests.proto",
+      "eve_public/sovereignty/hub/workforce/api/notices.proto",
+      "eve_public/sovereignty/resource/planet/api/requests.proto",
+      "eve_public/sovereignty/resource/star/api/requests.proto",
+      "eve_public/sovereignty/skyhook/api/requests.proto",
+      "eve_public/sovereignty/skyhook/api/notices.proto",
+      "eve_public/sovereignty/skyhook/api/admin/admin.proto",
+      "eve_public/sovereignty/mercenaryden/api/requests.proto",
+      "eve_public/sovereignty/mercenaryden/api/notices.proto",
+      "eve_public/sovereignty/mercenaryden/activity/api/requests.proto",
+      "eve_public/sovereignty/mercenaryden/activity/api/notices.proto"
+    ]
+  },
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "protobuf": {
+            "nested": {
+              "Any": {
+                "fields": {
+                  "type_url": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "value": {
+                    "type": "bytes",
+                    "id": 2
+                  }
+                }
+              },
+              "Duration": {
+                "fields": {
+                  "seconds": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "nanos": {
+                    "type": "int32",
+                    "id": 2
+                  }
+                }
+              },
+              "Empty": {
+                "fields": {}
+              },
+              "Timestamp": {
+                "fields": {
+                  "seconds": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "nanos": {
+                    "type": "int32",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "eve_public": {
+        "nested": {
+          "sovereignty": {
+            "nested": {
+              "hub": {
+                "nested": {
+                  "api": {
+                    "nested": {
+                      "GetResourcesRequest": {
+                        "fields": {
+                          "hub": {
+                            "type": ".eve_public.sovereignty.hub.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetResourcesResponse": {
+                        "fields": {
+                          "power": {
+                            "type": ".eve_public.sovereignty.hub.api.GetResourcesResponse.Power",
+                            "id": 1
+                          },
+                          "workforce": {
+                            "type": ".eve_public.sovereignty.hub.api.GetResourcesResponse.Workforce",
+                            "id": 2
+                          }
+                        },
+                        "nested": {
+                          "Power": {
+                            "fields": {
+                              "available": {
+                                "type": "uint64",
+                                "id": 1
+                              },
+                              "allocated": {
+                                "type": "uint64",
+                                "id": 2
+                              },
+                              "local_harvest": {
+                                "type": "uint64",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "Workforce": {
+                            "fields": {
+                              "available": {
+                                "type": "uint64",
+                                "id": 1
+                              },
+                              "allocated": {
+                                "type": "uint64",
+                                "id": 2
+                              },
+                              "local_harvest": {
+                                "type": "uint64",
+                                "id": 3
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ResourcesSimulatedNotice": {
+                        "fields": {
+                          "hub": {
+                            "type": ".eve_public.sovereignty.hub.Identifier",
+                            "id": 1
+                          },
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 2
+                          },
+                          "power": {
+                            "type": ".eve_public.sovereignty.hub.api.ResourcesSimulatedNotice.Power",
+                            "id": 3
+                          },
+                          "workforce": {
+                            "type": ".eve_public.sovereignty.hub.api.ResourcesSimulatedNotice.Workforce",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "Power": {
+                            "fields": {
+                              "available": {
+                                "type": "uint64",
+                                "id": 1
+                              },
+                              "allocated": {
+                                "type": "uint64",
+                                "id": 2
+                              },
+                              "local_harvest": {
+                                "type": "uint64",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "Workforce": {
+                            "fields": {
+                              "available": {
+                                "type": "uint64",
+                                "id": 1
+                              },
+                              "allocated": {
+                                "type": "uint64",
+                                "id": 2
+                              },
+                              "local_harvest": {
+                                "type": "uint64",
+                                "id": 3
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "upgrade": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "ProcessConfigurationRequest": {
+                            "fields": {
+                              "new_upgrades": {
+                                "rule": "repeated",
+                                "type": ".eve_public.inventory.genericitem.Identifier",
+                                "id": 1
+                              },
+                              "configuration": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.hub.upgrade.api.ProcessConfigurationRequest.UpgradeConfiguration",
+                                "id": 2
+                              },
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 3
+                              }
+                            },
+                            "nested": {
+                              "UpgradeConfiguration": {
+                                "fields": {
+                                  "upgrade_type": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1
+                                  },
+                                  "online": {
+                                    "type": "bool",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "ProcessConfigurationResponse": {
+                            "fields": {
+                              "hub_upgrades": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.HubUpgrades",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "UninstallRequest": {
+                            "fields": {
+                              "upgrade": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "UninstallResponse": {
+                            "fields": {}
+                          },
+                          "GetHubUpgradesRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetHubUpgradesResponse": {
+                            "fields": {
+                              "hub_upgrades": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.HubUpgrades",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetRequest": {
+                            "fields": {
+                              "upgrade": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetResponse": {
+                            "fields": {
+                              "attributes": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Attributes",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetDefinitionsRequest": {
+                            "fields": {}
+                          },
+                          "GetDefinitionsResponse": {
+                            "fields": {
+                              "definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.hub.upgrade.Definition",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "UninstalledNotice": {
+                            "fields": {
+                              "upgrade": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Identifier",
+                                "id": 1
+                              },
+                              "upgrade_type": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 2
+                              },
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "HubUpgradesConfiguredNotice": {
+                            "fields": {
+                              "hub_upgrades": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.HubUpgrades",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "HubUpgradesSimulatedNotice": {
+                            "fields": {
+                              "hub_upgrades": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.HubUpgrades",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Identifier": {
+                        "fields": {
+                          "hub": {
+                            "type": ".eve_public.sovereignty.hub.Identifier",
+                            "id": 1
+                          },
+                          "installation_type": {
+                            "type": ".eve_public.inventory.genericitemtype.Identifier",
+                            "id": 2,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "upgrade_type": {
+                            "type": ".eve_public.sovereignty.hub.upgrade_type.Identifier",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Definition": {
+                        "fields": {
+                          "installation_type": {
+                            "type": ".eve_public.inventory.genericitemtype.Identifier",
+                            "id": 1
+                          },
+                          "power_required": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "workforce_required": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "fuel_type": {
+                            "type": ".eve_public.inventory.genericitemtype.Identifier",
+                            "id": 4
+                          },
+                          "fuel_consumption_per_hour": {
+                            "type": "uint32",
+                            "id": 5
+                          },
+                          "fuel_startup_cost": {
+                            "type": "uint32",
+                            "id": 6
+                          },
+                          "mutually_exclusive_group": {
+                            "type": "string",
+                            "id": 7
+                          },
+                          "power_produced": {
+                            "type": "uint64",
+                            "id": 8
+                          },
+                          "workforce_produced": {
+                            "type": "uint64",
+                            "id": 9
+                          }
+                        }
+                      },
+                      "Attributes": {
+                        "fields": {
+                          "definition": {
+                            "type": ".eve_public.sovereignty.hub.upgrade.Definition",
+                            "id": 1
+                          },
+                          "power_state": {
+                            "type": ".eve_public.sovereignty.hub.upgrade.PowerState",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "HubUpgrades": {
+                        "fields": {
+                          "hub": {
+                            "type": ".eve_public.sovereignty.hub.Identifier",
+                            "id": 1
+                          },
+                          "upgrades": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.hub.upgrade.HubUpgrades.Upgrade",
+                            "id": 2
+                          },
+                          "last_updated": {
+                            "type": ".google.protobuf.Timestamp",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "Upgrade": {
+                            "fields": {
+                              "identifier": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Identifier",
+                                "id": 1
+                              },
+                              "attributes": {
+                                "type": ".eve_public.sovereignty.hub.upgrade.Attributes",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "PowerState": {
+                        "values": {
+                          "POWER_STATE_UNSPECIFIED": 0,
+                          "POWER_STATE_OFFLINE": 1,
+                          "POWER_STATE_ONLINE": 2,
+                          "POWER_STATE_LOW": 3,
+                          "POWER_STATE_PENDING": 4
+                        }
+                      }
+                    }
+                  },
+                  "upgrade_type": {
+                    "nested": {
+                      "Identifier": {
+                        "fields": {
+                          "sequential": {
+                            "type": "uint64",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "fuel": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "GetRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetResponse": {
+                            "fields": {
+                              "fuels": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.hub.fuel.api.GetResponse.Fuel",
+                                "id": 1
+                              },
+                              "last_updated": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 2
+                              }
+                            },
+                            "nested": {
+                              "Fuel": {
+                                "fields": {
+                                  "fuel_type": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1
+                                  },
+                                  "amount": {
+                                    "type": "uint32",
+                                    "id": 2
+                                  },
+                                  "burned_per_hour": {
+                                    "type": "uint32",
+                                    "id": 3
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "AddRequest": {
+                            "fields": {
+                              "fuel_item": {
+                                "type": ".eve_public.inventory.genericitem.Identifier",
+                                "id": 1
+                              },
+                              "amount": {
+                                "type": "uint32",
+                                "id": 2
+                              },
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "AddResponse": {
+                            "fields": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "workforce": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "GetConfigurationRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetConfigurationResponse": {
+                            "fields": {
+                              "configuration": {
+                                "type": ".eve_public.sovereignty.hub.workforce.Configuration",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "ConfigureRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              },
+                              "configuration": {
+                                "type": ".eve_public.sovereignty.hub.workforce.Configuration",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "ConfigureResponse": {
+                            "fields": {}
+                          },
+                          "GetStateRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetStateResponse": {
+                            "fields": {
+                              "state": {
+                                "type": ".eve_public.sovereignty.hub.workforce.State",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetNetworkableHubsRequest": {
+                            "fields": {
+                              "hub": {
+                                "type": ".eve_public.sovereignty.hub.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetNetworkableHubsResponse": {
+                            "fields": {
+                              "hubs": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.hub.workforce.api.GetNetworkableHubsResponse.NetworkedHub",
+                                "id": 1
+                              }
+                            },
+                            "nested": {
+                              "NetworkedHub": {
+                                "fields": {
+                                  "hub": {
+                                    "type": ".eve_public.sovereignty.hub.Identifier",
+                                    "id": 1
+                                  },
+                                  "system": {
+                                    "type": ".eve_public.solarsystem.Identifier",
+                                    "id": 2
+                                  },
+                                  "configuration": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.Configuration",
+                                    "id": 3
+                                  },
+                                  "state": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.State",
+                                    "id": 4
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ImportConfiguration": {
+                        "fields": {
+                          "sources": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.hub.workforce.ImportConfiguration.Source",
+                            "id": 1
+                          }
+                        },
+                        "nested": {
+                          "Source": {
+                            "fields": {
+                              "source": {
+                                "type": ".eve_public.solarsystem.Identifier",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ImportState": {
+                        "fields": {
+                          "sources": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.hub.workforce.ImportState.Source",
+                            "id": 1
+                          }
+                        },
+                        "nested": {
+                          "Source": {
+                            "fields": {
+                              "source": {
+                                "type": ".eve_public.solarsystem.Identifier",
+                                "id": 1
+                              },
+                              "amount": {
+                                "type": "uint64",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ExportConfiguration": {
+                        "oneofs": {
+                          "export_destination": {
+                            "oneof": [
+                              "destination_system",
+                              "no_destination"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "destination": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "amount": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "destination_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 3
+                          },
+                          "no_destination": {
+                            "type": "bool",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "ExportState": {
+                        "oneofs": {
+                          "export_destination": {
+                            "oneof": [
+                              "destination_system",
+                              "no_destination"
+                            ]
+                          },
+                          "exporting": {
+                            "oneof": [
+                              "connected",
+                              "disconnected"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "destination": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "amount": {
+                            "type": "uint64",
+                            "id": 2,
+                            "options": {
+                              "deprecated": true,
+                              "packed": false
+                            }
+                          },
+                          "destination_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 3,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "no_destination": {
+                            "type": "bool",
+                            "id": 4,
+                            "options": {
+                              "deprecated": true,
+                              "packed": false
+                            }
+                          },
+                          "connected": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ExportState.Connected",
+                            "id": 5
+                          },
+                          "disconnected": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ExportState.Disconnected",
+                            "id": 6
+                          }
+                        },
+                        "nested": {
+                          "Connected": {
+                            "fields": {
+                              "destination_system": {
+                                "type": ".eve_public.solarsystem.Identifier",
+                                "id": 1
+                              },
+                              "exported_quantity": {
+                                "type": "uint64",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "Disconnected": {
+                            "fields": {
+                              "local_reserve": {
+                                "type": "uint64",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Transit": {
+                        "fields": {}
+                      },
+                      "Configuration": {
+                        "oneofs": {
+                          "mode": {
+                            "oneof": [
+                              "inactive",
+                              "import_settings",
+                              "export_settings",
+                              "transit"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "inactive": {
+                            "type": "bool",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true,
+                              "packed": false
+                            }
+                          },
+                          "import_settings": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ImportConfiguration",
+                            "id": 2
+                          },
+                          "export_settings": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ExportConfiguration",
+                            "id": 3
+                          },
+                          "transit": {
+                            "type": "bool",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "State": {
+                        "oneofs": {
+                          "mode": {
+                            "oneof": [
+                              "inactive",
+                              "import_state",
+                              "export_state",
+                              "transit"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "inactive": {
+                            "type": "bool",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true,
+                              "packed": false
+                            }
+                          },
+                          "import_state": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ImportState",
+                            "id": 2
+                          },
+                          "export_state": {
+                            "type": ".eve_public.sovereignty.hub.workforce.ExportState",
+                            "id": 3
+                          },
+                          "transit": {
+                            "type": ".eve_public.sovereignty.hub.workforce.Transit",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "resource": {
+                "nested": {
+                  "transfer": {
+                    "nested": {
+                      "workforce": {
+                        "nested": {
+                          "api": {
+                            "nested": {
+                              "ConfiguredNotice": {
+                                "fields": {
+                                  "solar_system": {
+                                    "type": ".eve_public.solarsystem.Identifier",
+                                    "id": 1
+                                  },
+                                  "old_configuration": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.Configuration",
+                                    "id": 2
+                                  },
+                                  "new_configuration": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.Configuration",
+                                    "id": 3
+                                  },
+                                  "hub": {
+                                    "type": ".eve_public.sovereignty.hub.Identifier",
+                                    "id": 4
+                                  }
+                                }
+                              },
+                              "StateChangedNotice": {
+                                "fields": {
+                                  "solar_system": {
+                                    "type": ".eve_public.solarsystem.Identifier",
+                                    "id": 1
+                                  },
+                                  "old_state": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.State",
+                                    "id": 2
+                                  },
+                                  "new_state": {
+                                    "type": ".eve_public.sovereignty.hub.workforce.State",
+                                    "id": 3
+                                  },
+                                  "hub": {
+                                    "type": ".eve_public.sovereignty.hub.Identifier",
+                                    "id": 4
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "planet": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "GetAllDefinitionsRequest": {
+                            "oneofs": {
+                              "version": {
+                                "oneof": [
+                                  "known_version",
+                                  "no_known_version"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "known_version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 1
+                              },
+                              "no_known_version": {
+                                "type": "bool",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "GetAllDefinitionsResponse": {
+                            "fields": {
+                              "definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.resource.planet.Definition",
+                                "id": 1
+                              },
+                              "version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "GetDefinitionsVersionRequest": {
+                            "fields": {
+                              "version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetDefinitionsVersionResponse": {
+                            "fields": {
+                              "definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.resource.planet.Definition",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetAllConfigurationsRequest": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {}
+                          },
+                          "GetAllConfigurationsResponse": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {
+                              "configurations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.resource.planet.Configuration",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Definition": {
+                        "fields": {
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 1
+                          },
+                          "power": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "workforce": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "reagent_definitions": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.resource.planet.Definition.ReagentDefinition",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "ReagentDefinition": {
+                            "fields": {
+                              "type": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 3
+                              },
+                              "definition": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Configuration": {
+                        "options": {
+                          "deprecated": true
+                        },
+                        "fields": {
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 1
+                          },
+                          "power": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "workforce": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "reagent_configurations": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.resource.planet.Configuration.ReagentConfiguration",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "ReagentConfiguration": {
+                            "fields": {
+                              "type": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestConfiguration",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationConfiguration",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "reagent": {
+                        "nested": {
+                          "Definition": {
+                            "fields": {
+                              "amount_per_cycle": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "cycle_period": {
+                                "type": ".google.protobuf.Duration",
+                                "id": 2
+                              },
+                              "secured_percentage": {
+                                "type": "uint32",
+                                "id": 3
+                              },
+                              "secured_capacity": {
+                                "type": "uint32",
+                                "id": 4
+                              },
+                              "unsecured_capacity": {
+                                "type": "uint32",
+                                "id": 5
+                              }
+                            }
+                          },
+                          "Simulation": {
+                            "fields": {
+                              "secured_stock": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "unsecured_stock": {
+                                "type": "uint32",
+                                "id": 2
+                              },
+                              "last_cycle": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "MaturationConfiguration": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {
+                              "percentage": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "cycle_period": {
+                                "type": ".google.protobuf.Duration",
+                                "id": 2
+                              },
+                              "min": {
+                                "type": "uint64",
+                                "id": 3
+                              },
+                              "max": {
+                                "type": "uint64",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "MaturationSimulation": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {
+                              "stock": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "last_cycle": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 2
+                              },
+                              "config": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationConfiguration",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "HarvestConfiguration": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {
+                              "amount_per_cycle": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "cycle_period": {
+                                "type": ".google.protobuf.Duration",
+                                "id": 2
+                              },
+                              "min_stock": {
+                                "type": "uint64",
+                                "id": 3
+                              },
+                              "max_stock": {
+                                "type": "uint64",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "HarvestSimulation": {
+                            "options": {
+                              "deprecated": true
+                            },
+                            "fields": {
+                              "stock": {
+                                "type": "uint32",
+                                "id": 1
+                              },
+                              "last_cycle": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 2
+                              },
+                              "config": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestConfiguration",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "itemtype": {
+                            "nested": {
+                              "Identifier": {
+                                "fields": {
+                                  "sequential": {
+                                    "type": "uint64",
+                                    "id": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "star": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "GetAllConfigurationsRequest": {
+                            "fields": {}
+                          },
+                          "GetAllConfigurationsResponse": {
+                            "fields": {
+                              "configurations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.resource.star.Configuration",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Configuration": {
+                        "fields": {
+                          "star": {
+                            "type": ".eve_public.star.Identifier",
+                            "id": 1
+                          },
+                          "power": {
+                            "type": "uint64",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "skyhook": {
+                "nested": {
+                  "api": {
+                    "nested": {
+                      "GetRequest": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetResponse": {
+                        "oneofs": {
+                          "vulnerability": {
+                            "oneof": [
+                              "theft_vulnerability",
+                              "unknown"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "reagent_simulations": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.GetResponse.ReagentSimulation",
+                            "id": 2
+                          },
+                          "active": {
+                            "type": "bool",
+                            "id": 3
+                          },
+                          "reagent_definitions": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.GetResponse.ReagentDefinition",
+                            "id": 4
+                          },
+                          "theft_vulnerability": {
+                            "type": ".eve_public.sovereignty.skyhook.TheftVulnerability",
+                            "id": 5
+                          },
+                          "unknown": {
+                            "type": "bool",
+                            "id": 6
+                          },
+                          "workforce": {
+                            "type": ".eve_public.sovereignty.skyhook.Workforce",
+                            "id": 7
+                          },
+                          "planet_resources_definitions_version": {
+                            "type": ".eve_public.semanticversion.Specification",
+                            "id": 8
+                          }
+                        },
+                        "nested": {
+                          "ReagentSimulation": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 5
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationSimulation",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestSimulation",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "simulation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "ReagentDefinition": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 5
+                              },
+                              "definition": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "GetAllByCorporationRequest": {
+                        "fields": {
+                          "corporation": {
+                            "type": ".eve_public.corporation.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetAllByCorporationResponse": {
+                        "fields": {
+                          "skyhooks": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.GetAllByCorporationResponse.Skyhook",
+                            "id": 1
+                          }
+                        },
+                        "nested": {
+                          "ReagentSimulation": {
+                            "fields": {
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 1
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationSimulation",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestSimulation",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "simulation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "ReagentDefinition": {
+                            "fields": {
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 1
+                              },
+                              "definition": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "Skyhook": {
+                            "oneofs": {
+                              "vulnerability": {
+                                "oneof": [
+                                  "theft_vulnerability",
+                                  "unknown"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "reagent_simulations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.GetAllByCorporationResponse.ReagentSimulation",
+                                "id": 2
+                              },
+                              "active": {
+                                "type": "bool",
+                                "id": 3
+                              },
+                              "reagent_definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.GetAllByCorporationResponse.ReagentDefinition",
+                                "id": 4
+                              },
+                              "theft_vulnerability": {
+                                "type": ".eve_public.sovereignty.skyhook.TheftVulnerability",
+                                "id": 5
+                              },
+                              "unknown": {
+                                "type": "bool",
+                                "id": 6
+                              },
+                              "workforce": {
+                                "type": ".eve_public.sovereignty.skyhook.Workforce",
+                                "id": 7
+                              },
+                              "planet_resources_definitions_version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 8
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "GetAllLocalRequest": {
+                        "fields": {}
+                      },
+                      "GetAllLocalResponse": {
+                        "fields": {
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1
+                          },
+                          "skyhooks": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.GetAllLocalResponse.Skyhook",
+                            "id": 2
+                          }
+                        },
+                        "nested": {
+                          "ReagentSimulation": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 5
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationSimulation",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestSimulation",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "simulation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "ReagentDefinition": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 3
+                              },
+                              "definition": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "Skyhook": {
+                            "oneofs": {
+                              "vulnerability": {
+                                "oneof": [
+                                  "theft_vulnerability",
+                                  "unknown"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "reagent_simulations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.GetAllLocalResponse.ReagentSimulation",
+                                "id": 2
+                              },
+                              "active": {
+                                "type": "bool",
+                                "id": 3
+                              },
+                              "reagent_definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.GetAllLocalResponse.ReagentDefinition",
+                                "id": 4
+                              },
+                              "theft_vulnerability": {
+                                "type": ".eve_public.sovereignty.skyhook.TheftVulnerability",
+                                "id": 5
+                              },
+                              "unknown": {
+                                "type": "bool",
+                                "id": 6
+                              },
+                              "workforce": {
+                                "type": ".eve_public.sovereignty.skyhook.Workforce",
+                                "id": 7
+                              },
+                              "planet_resources_definitions_version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 8
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ActivateRequest": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ActivateResponse": {
+                        "fields": {}
+                      },
+                      "DeactivateRequest": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "DeactivateResponse": {
+                        "fields": {}
+                      },
+                      "GetSolarSystemsWithTheftVulnerableSkyhooksRequest": {
+                        "fields": {}
+                      },
+                      "GetSolarSystemsWithTheftVulnerableSkyhooksResponse": {
+                        "fields": {
+                          "solar_systems": {
+                            "rule": "repeated",
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetTheftVulnerableSkyhooksInSolarSystemRequest": {
+                        "fields": {
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetTheftVulnerableSkyhooksInSolarSystemResponse": {
+                        "fields": {
+                          "skyhooks": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.GetTheftVulnerableSkyhooksInSolarSystemResponse.VulnerableSkyhook",
+                            "id": 1
+                          }
+                        },
+                        "nested": {
+                          "VulnerableSkyhook": {
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "planet": {
+                                "type": ".eve_public.planet.Identifier",
+                                "id": 2
+                              },
+                              "expiry": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 3
+                              },
+                              "start": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 4
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ReagentSimulationsNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 2
+                          },
+                          "simulations": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.ReagentSimulationsNotice.ReagentSimulation",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "ReagentSimulation": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 6
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationSimulation",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestSimulation",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "simulation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                "id": 4
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ReagentDefinitionsNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 2
+                          },
+                          "definition": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.ReagentDefinitionsNotice.ReagentDefinition",
+                            "id": 3
+                          },
+                          "planet_resources_definitions_version": {
+                            "type": ".eve_public.semanticversion.Specification",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "ReagentDefinition": {
+                            "fields": {
+                              "reagent": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 3
+                              },
+                              "definition": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ReagentConfigurationsNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 2
+                          },
+                          "configurations": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.ReagentConfigurationsNotice.ReagentConfiguration",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "ReagentConfiguration": {
+                            "fields": {
+                              "type": {
+                                "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                "id": 1,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "reagent_type": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                "id": 4
+                              },
+                              "harvest": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestConfiguration",
+                                "id": 2,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              },
+                              "maturation": {
+                                "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationConfiguration",
+                                "id": 3,
+                                "options": {
+                                  "deprecated": true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ActivationNotice": {
+                        "fields": {
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1
+                          },
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 2
+                          },
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 3
+                          },
+                          "active": {
+                            "type": "bool",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "WorkforceChangedNotice": {
+                        "fields": {
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 1
+                          },
+                          "planet": {
+                            "type": ".eve_public.planet.Identifier",
+                            "id": 2
+                          },
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 3
+                          },
+                          "workforce": {
+                            "type": "uint64",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "AllInSolarSystemNotice": {
+                        "fields": {
+                          "skyhooks": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.skyhook.api.AllInSolarSystemNotice.Skyhook",
+                            "id": 1
+                          },
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 2
+                          }
+                        },
+                        "nested": {
+                          "Skyhook": {
+                            "oneofs": {
+                              "vulnerability": {
+                                "oneof": [
+                                  "theft_vulnerability",
+                                  "unknown"
+                                ]
+                              },
+                              "workforce": {
+                                "oneof": [
+                                  "workforce_available",
+                                  "none"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "reagent_simulations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.AllInSolarSystemNotice.Skyhook.ReagentSimulation",
+                                "id": 2
+                              },
+                              "active": {
+                                "type": "bool",
+                                "id": 3
+                              },
+                              "reagent_definitions": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.AllInSolarSystemNotice.Skyhook.ReagentDefinition",
+                                "id": 4
+                              },
+                              "theft_vulnerability": {
+                                "type": ".eve_public.sovereignty.skyhook.TheftVulnerability",
+                                "id": 5
+                              },
+                              "unknown": {
+                                "type": "bool",
+                                "id": 6
+                              },
+                              "workforce_available": {
+                                "type": "uint64",
+                                "id": 7,
+                                "options": {
+                                  "deprecated": true,
+                                  "packed": false
+                                }
+                              },
+                              "none": {
+                                "type": "bool",
+                                "id": 8,
+                                "options": {
+                                  "deprecated": true,
+                                  "packed": false
+                                }
+                              },
+                              "effective_workforce": {
+                                "type": ".eve_public.sovereignty.skyhook.Workforce",
+                                "id": 9
+                              },
+                              "planet_resources_definitions_version": {
+                                "type": ".eve_public.semanticversion.Specification",
+                                "id": 10
+                              }
+                            },
+                            "nested": {
+                              "ReagentSimulation": {
+                                "fields": {
+                                  "reagent": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "reagent_type": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                    "id": 5
+                                  },
+                                  "maturation": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.MaturationSimulation",
+                                    "id": 2,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "harvest": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.HarvestSimulation",
+                                    "id": 3,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "simulation": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                    "id": 4
+                                  }
+                                }
+                              },
+                              "ReagentDefinition": {
+                                "fields": {
+                                  "reagent": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "reagent_type": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                    "id": 6
+                                  },
+                                  "definition": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.Definition",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "TheftVulnerabilityWindowScheduledNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "start_time": {
+                            "type": ".google.protobuf.Timestamp",
+                            "id": 2
+                          },
+                          "end_time": {
+                            "type": ".google.protobuf.Timestamp",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "TheftVulnerabilityWindowStartedNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          },
+                          "end_time": {
+                            "type": ".google.protobuf.Timestamp",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "TheftVulnerabilityWindowEndedNotice": {
+                        "fields": {
+                          "skyhook": {
+                            "type": ".eve_public.planet.skyhook.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "admin": {
+                        "nested": {
+                          "ModifyReagentsRequest": {
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "reagents": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.admin.ModifyReagentsRequest.ReagentsSimulationState",
+                                "id": 2
+                              }
+                            },
+                            "nested": {
+                              "ReagentsSimulationState": {
+                                "oneofs": {
+                                  "last_cycle": {
+                                    "oneof": [
+                                      "now",
+                                      "timestamp"
+                                    ]
+                                  }
+                                },
+                                "fields": {
+                                  "reagent": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "reagent_type": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                    "id": 6
+                                  },
+                                  "secured_stock": {
+                                    "type": "uint32",
+                                    "id": 2
+                                  },
+                                  "unsecured_stock": {
+                                    "type": "uint32",
+                                    "id": 3
+                                  },
+                                  "now": {
+                                    "type": "bool",
+                                    "id": 4
+                                  },
+                                  "timestamp": {
+                                    "type": ".google.protobuf.Timestamp",
+                                    "id": 5
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "ModifyReagentsResponse": {
+                            "fields": {
+                              "reagent_simulations": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.skyhook.api.admin.ModifyReagentsResponse.ReagentSimulation",
+                                "id": 1
+                              }
+                            },
+                            "nested": {
+                              "ReagentSimulation": {
+                                "fields": {
+                                  "reagent": {
+                                    "type": ".eve_public.inventory.genericitemtype.Identifier",
+                                    "id": 1,
+                                    "options": {
+                                      "deprecated": true
+                                    }
+                                  },
+                                  "reagent_type": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.itemtype.Identifier",
+                                    "id": 6
+                                  },
+                                  "simulation": {
+                                    "type": ".eve_public.sovereignty.resource.planet.reagent.Simulation",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "ScheduleTheftVulnerabilityWindowRequest": {
+                            "fields": {
+                              "skyhook": {
+                                "type": ".eve_public.planet.skyhook.Identifier",
+                                "id": 1
+                              },
+                              "vulnerability_start": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 2
+                              },
+                              "vulnerability_end": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "ScheduleTheftVulnerabilityWindowResponse": {
+                            "fields": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "TheftVulnerability": {
+                    "fields": {
+                      "vulnerable": {
+                        "type": "bool",
+                        "id": 1
+                      },
+                      "start": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 2
+                      },
+                      "end": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "Workforce": {
+                    "oneofs": {
+                      "available": {
+                        "oneof": [
+                          "amount",
+                          "none"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "amount": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "none": {
+                        "type": "bool",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "mercenaryden": {
+                "nested": {
+                  "api": {
+                    "nested": {
+                      "GetAsOwnerRequest": {
+                        "fields": {
+                          "id": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetAsOwnerResponse": {
+                        "fields": {
+                          "attributes": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Attributes",
+                            "id": 1
+                          },
+                          "enabled": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "evolution": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Evolution",
+                            "id": 3
+                          },
+                          "infomorphs": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Infomorphs",
+                            "id": 4
+                          },
+                          "cargo_extraction_enabled": {
+                            "type": "bool",
+                            "id": 5
+                          },
+                          "skyhook_owner": {
+                            "type": ".eve_public.corporation.Identifier",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "GetAllOwnedRequest": {
+                        "fields": {}
+                      },
+                      "GetAllOwnedResponse": {
+                        "fields": {
+                          "id": {
+                            "rule": "repeated",
+                            "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetMaximumForCharacterRequest": {
+                        "fields": {}
+                      },
+                      "GetMaximumForCharacterResponse": {
+                        "fields": {
+                          "current_maximum": {
+                            "type": "uint32",
+                            "id": 1
+                          },
+                          "absolute_maximum": {
+                            "type": "uint32",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "EvolutionStateChangedNotice": {
+                        "fields": {
+                          "mercenary_den": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                            "id": 1
+                          },
+                          "state": {
+                            "type": ".eve_public.sovereignty.mercenaryden.EvolutionSimulation",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "DefinitionsUpdatedNotice": {
+                        "fields": {
+                          "mercenary_den": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                            "id": 1
+                          },
+                          "evolution": {
+                            "type": ".eve_public.sovereignty.mercenaryden.EvolutionDefinition",
+                            "id": 2
+                          },
+                          "infomorphs": {
+                            "type": ".eve_public.sovereignty.mercenaryden.InfomorphsGenerationDefinition",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Evolution": {
+                    "fields": {
+                      "definition": {
+                        "type": ".eve_public.sovereignty.mercenaryden.EvolutionDefinition",
+                        "id": 1
+                      },
+                      "simulation": {
+                        "type": ".eve_public.sovereignty.mercenaryden.EvolutionSimulation",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "EvolutionSimulation": {
+                    "oneofs": {
+                      "state": {
+                        "oneof": [
+                          "paused",
+                          "started"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "paused": {
+                        "type": "bool",
+                        "id": 1
+                      },
+                      "started": {
+                        "type": "bool",
+                        "id": 2
+                      },
+                      "development": {
+                        "type": ".eve_public.sovereignty.mercenaryden.DevelopmentSimulation",
+                        "id": 3
+                      },
+                      "anarchy": {
+                        "type": ".eve_public.sovereignty.mercenaryden.AnarchySimulation",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "EvolutionDefinition": {
+                    "fields": {
+                      "development": {
+                        "type": ".eve_public.sovereignty.mercenaryden.DevelopmentDefinition",
+                        "id": 1
+                      },
+                      "anarchy": {
+                        "type": ".eve_public.sovereignty.mercenaryden.AnarchyDefinition",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "DevelopmentSimulation": {
+                    "oneofs": {
+                      "state": {
+                        "oneof": [
+                          "paused_at",
+                          "simulated_at"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "level": {
+                        "type": "uint32",
+                        "id": 1
+                      },
+                      "stage": {
+                        "type": ".eve_public.sovereignty.mercenaryden.DevelopmentStage",
+                        "id": 2
+                      },
+                      "paused_at": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 3
+                      },
+                      "simulated_at": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "DevelopmentDefinition": {
+                    "fields": {
+                      "unit_increase_time_seconds": {
+                        "type": "uint32",
+                        "id": 1
+                      },
+                      "stages": {
+                        "rule": "repeated",
+                        "type": ".eve_public.sovereignty.mercenaryden.DevelopmentDefinition.DevelopmentStage",
+                        "id": 2
+                      }
+                    },
+                    "nested": {
+                      "DevelopmentStage": {
+                        "fields": {
+                          "stage": {
+                            "type": ".eve_public.sovereignty.mercenaryden.DevelopmentStage",
+                            "id": 1
+                          },
+                          "level_lower_bound": {
+                            "type": "uint32",
+                            "id": 2
+                          },
+                          "level_upper_bound": {
+                            "type": "uint32",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "AnarchySimulation": {
+                    "oneofs": {
+                      "state": {
+                        "oneof": [
+                          "paused_at",
+                          "simulated_at"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "level": {
+                        "type": "uint32",
+                        "id": 1
+                      },
+                      "stage": {
+                        "type": ".eve_public.sovereignty.mercenaryden.AnarchyStage",
+                        "id": 2
+                      },
+                      "paused_at": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 3
+                      },
+                      "simulated_at": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "AnarchyDefinition": {
+                    "fields": {
+                      "unit_increase_time_seconds": {
+                        "type": "uint32",
+                        "id": 1
+                      },
+                      "stages": {
+                        "rule": "repeated",
+                        "type": ".eve_public.sovereignty.mercenaryden.AnarchyDefinition.AnarchyStage",
+                        "id": 2
+                      }
+                    },
+                    "nested": {
+                      "AnarchyStage": {
+                        "fields": {
+                          "stage": {
+                            "type": ".eve_public.sovereignty.mercenaryden.AnarchyStage",
+                            "id": 1
+                          },
+                          "level_lower_bound": {
+                            "type": "uint32",
+                            "id": 2
+                          },
+                          "level_upper_bound": {
+                            "type": "uint32",
+                            "id": 3
+                          },
+                          "workforce_consumption": {
+                            "type": "uint64",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "DevelopmentStage": {
+                    "values": {
+                      "DEVELOPMENT_STAGE_UNSPECIFIED": 0,
+                      "DEVELOPMENT_STAGE_1": 1,
+                      "DEVELOPMENT_STAGE_2": 2,
+                      "DEVELOPMENT_STAGE_3": 3,
+                      "DEVELOPMENT_STAGE_4": 4,
+                      "DEVELOPMENT_STAGE_5": 5
+                    }
+                  },
+                  "AnarchyStage": {
+                    "values": {
+                      "ANARCHY_STAGE_UNSPECIFIED": 0,
+                      "ANARCHY_STAGE_1": 1,
+                      "ANARCHY_STAGE_2": 2,
+                      "ANARCHY_STAGE_3": 3,
+                      "ANARCHY_STAGE_4": 4,
+                      "ANARCHY_STAGE_5": 5
+                    }
+                  },
+                  "Infomorphs": {
+                    "fields": {
+                      "definition": {
+                        "type": ".eve_public.sovereignty.mercenaryden.InfomorphsGenerationDefinition",
+                        "id": 1
+                      },
+                      "contents": {
+                        "type": ".eve_public.sovereignty.mercenaryden.InfomorphsContents",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "InfomorphsContents": {
+                    "fields": {
+                      "infomorphs_count": {
+                        "type": "uint32",
+                        "id": 1
+                      },
+                      "last_generation_tick": {
+                        "type": ".google.protobuf.Timestamp",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "InfomorphsGenerationDefinition": {
+                    "fields": {
+                      "infomorph_type": {
+                        "type": ".eve_public.sovereignty.mercenaryden.infomorph.itemtype.Identifier",
+                        "id": 1
+                      },
+                      "generation_tick_seconds": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "generation_bands": {
+                        "rule": "repeated",
+                        "type": ".eve_public.sovereignty.mercenaryden.InfomorphsGenerationDefinition.GenerationBand",
+                        "id": 3
+                      },
+                      "cargo_capacity": {
+                        "type": "uint32",
+                        "id": 4
+                      }
+                    },
+                    "nested": {
+                      "GenerationBand": {
+                        "fields": {
+                          "stage": {
+                            "type": ".eve_public.sovereignty.mercenaryden.DevelopmentStage",
+                            "id": 1
+                          },
+                          "lower_band": {
+                            "type": "uint32",
+                            "id": 2
+                          },
+                          "upper_band": {
+                            "type": "uint32",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "infomorph": {
+                    "nested": {
+                      "itemtype": {
+                        "nested": {
+                          "Identifier": {
+                            "fields": {
+                              "sequential": {
+                                "type": "uint64",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "Attributes": {
+                    "fields": {
+                      "owner": {
+                        "type": ".eve_public.character.Identifier",
+                        "id": 1
+                      },
+                      "skyhook": {
+                        "type": ".eve_public.planet.skyhook.Identifier",
+                        "id": 2
+                      },
+                      "solar_system": {
+                        "type": ".eve_public.solarsystem.Identifier",
+                        "id": 3
+                      },
+                      "planet": {
+                        "type": ".eve_public.planet.Identifier",
+                        "id": 4
+                      },
+                      "type": {
+                        "type": ".eve_public.sovereignty.mercenarydentype.Identifier",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "activity": {
+                    "nested": {
+                      "api": {
+                        "nested": {
+                          "GetForMercenaryDenRequest": {
+                            "fields": {
+                              "mercenary_den": {
+                                "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetForMercenaryDenResponse": {
+                            "fields": {
+                              "activities": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.api.GetForMercenaryDenResponse.Activity",
+                                "id": 1
+                              },
+                              "next_generation_at": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 2
+                              }
+                            },
+                            "nested": {
+                              "Activity": {
+                                "fields": {
+                                  "id": {
+                                    "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                    "id": 1
+                                  },
+                                  "attributes": {
+                                    "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "GetAllRequest": {
+                            "fields": {}
+                          },
+                          "GetAllResponse": {
+                            "fields": {
+                              "activities": {
+                                "rule": "repeated",
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.api.GetAllResponse.Activity",
+                                "id": 1
+                              }
+                            },
+                            "nested": {
+                              "Activity": {
+                                "fields": {
+                                  "id": {
+                                    "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                    "id": 1
+                                  },
+                                  "attributes": {
+                                    "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "StartRequest": {
+                            "fields": {
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "StartResponse": {
+                            "fields": {
+                              "attributes": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "GetCapacityRequest": {
+                            "fields": {}
+                          },
+                          "GetCapacityResponse": {
+                            "fields": {
+                              "capacity": {
+                                "type": "uint32",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "AddedNotice": {
+                            "fields": {
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 1
+                              },
+                              "activity": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                "id": 2
+                              },
+                              "solar_system": {
+                                "type": ".eve_public.solarsystem.Identifier",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "ExpiryChangedNotice": {
+                            "fields": {
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 1
+                              },
+                              "activity": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                "id": 2
+                              },
+                              "previous_expiry": {
+                                "type": ".google.protobuf.Timestamp",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "StartedNotice": {
+                            "fields": {
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 1
+                              },
+                              "activity": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Attributes",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "CompletedNotice": {
+                            "fields": {
+                              "mercenary_den": {
+                                "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                                "id": 1
+                              },
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 2
+                              },
+                              "development_impact": {
+                                "type": "int32",
+                                "id": 3
+                              },
+                              "anarchy_impact": {
+                                "type": "int32",
+                                "id": 4
+                              },
+                              "infomorph_bonus": {
+                                "type": "uint32",
+                                "id": 5
+                              }
+                            }
+                          },
+                          "RemovedNotice": {
+                            "fields": {
+                              "mercenary_den": {
+                                "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                                "id": 1
+                              },
+                              "id": {
+                                "type": ".eve_public.sovereignty.mercenaryden.activity.Identifier",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Identifier": {
+                        "fields": {
+                          "uuid": {
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "Attributes": {
+                        "fields": {
+                          "activitytemplate": {
+                            "type": ".eve_public.sovereignty.mercenaryden.activity.activitytemplate.Definition",
+                            "id": 1
+                          },
+                          "mercenary_den": {
+                            "type": ".eve_public.sovereignty.mercenaryden.Identifier",
+                            "id": 2
+                          },
+                          "started": {
+                            "type": "bool",
+                            "id": 3
+                          },
+                          "expiry": {
+                            "type": ".google.protobuf.Timestamp",
+                            "id": 4
+                          },
+                          "solar_system": {
+                            "type": ".eve_public.solarsystem.Identifier",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "activitytemplate": {
+                        "nested": {
+                          "Definition": {
+                            "fields": {
+                              "name": {
+                                "type": ".eve_public.localization.message.Identifier",
+                                "id": 1
+                              },
+                              "description": {
+                                "type": ".eve_public.localization.message.Identifier",
+                                "id": 2
+                              },
+                              "dungeon": {
+                                "type": ".eve_public.dungeon.Identifier",
+                                "id": 3
+                              },
+                              "development_impact": {
+                                "type": "int32",
+                                "id": 4
+                              },
+                              "anarchy_impact": {
+                                "type": "int32",
+                                "id": 5
+                              },
+                              "infomorph_bonus": {
+                                "type": "uint32",
+                                "id": 6
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "mercenarydentype": {
+                "nested": {
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint32",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "solarsystem": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "Attributes": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "security": {
+                    "type": ".eve_public.securitystatus.Value",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          },
+          "securitystatus": {
+            "nested": {
+              "Value": {
+                "fields": {
+                  "units": {
+                    "type": "sint64",
+                    "id": 1
+                  },
+                  "nanos": {
+                    "type": "sint32",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          },
+          "inventory": {
+            "nested": {
+              "genericitem": {
+                "nested": {
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "Location": {
+                    "fields": {
+                      "item": {
+                        "type": ".eve_public.inventory.genericitem.Identifier",
+                        "id": 1
+                      },
+                      "flag": {
+                        "type": ".eve_public.inventory.LocationFlag",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "LocationFlag": {
+                "fields": {
+                  "value": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "genericitemtype": {
+                "nested": {
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "Attributes": {
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "semanticversion": {
+            "nested": {
+              "Specification": {
+                "fields": {
+                  "major": {
+                    "type": "uint32",
+                    "id": 1
+                  },
+                  "minor": {
+                    "type": "uint32",
+                    "id": 2
+                  },
+                  "patch": {
+                    "type": "uint32",
+                    "id": 3
+                  },
+                  "prerelease_tags": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 4
+                  },
+                  "build_tags": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 5
+                  }
+                }
+              }
+            }
+          },
+          "planet": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "skyhook": {
+                "nested": {
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "star": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          },
+          "corporation": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint32",
+                    "id": 1
+                  }
+                }
+              },
+              "role": {
+                "nested": {
+                  "Collection": {
+                    "fields": {
+                      "bitmask": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "character": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint32",
+                    "id": 1
+                  }
+                }
+              },
+              "ActivationNotice": {
+                "fields": {
+                  "character": {
+                    "type": ".eve_public.character.Identifier",
+                    "id": 1
+                  },
+                  "corporation": {
+                    "type": ".eve_public.corporation.Identifier",
+                    "id": 2
+                  },
+                  "corporation_roles": {
+                    "type": ".eve_public.corporation.role.Collection",
+                    "id": 3
+                  }
+                }
+              },
+              "DeactivationNotice": {
+                "fields": {
+                  "character": {
+                    "type": ".eve_public.character.Identifier",
+                    "id": 1
+                  }
+                }
+              },
+              "GetNamesByUserRequest": {
+                "fields": {}
+              },
+              "GetNamesByUserResponse": {
+                "fields": {
+                  "characters": {
+                    "rule": "repeated",
+                    "type": ".eve_public.character.GetNamesByUserResponse.CharacterName",
+                    "id": 1
+                  }
+                },
+                "nested": {
+                  "CharacterName": {
+                    "fields": {
+                      "identifier": {
+                        "type": ".eve_public.character.Identifier",
+                        "id": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "dungeon": {
+            "nested": {
+              "Identifier": {
+                "fields": {
+                  "sequential": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          },
+          "localization": {
+            "nested": {
+              "message": {
+                "nested": {
+                  "Identifier": {
+                    "fields": {
+                      "sequential": {
+                        "type": "uint32",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

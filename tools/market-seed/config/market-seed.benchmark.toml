@@ -1,0 +1,24 @@
+[input]
+static_data_dir = "../../server/src/newDatabase/data"
+
+[output]
+database_path = "../../externalservices/market-server/data/bench/market-bench.sqlite"
+
+[seed]
+default_quantity_per_station_type = 5000
+seed_markup_percent = 8.0
+station_jitter_percent = 1.5
+region_jitter_percent = 2.0
+price_floor = 100.0
+fallback_base_price = 10000.0
+fallback_type_modulus = 250
+fallback_type_step = 250.0
+seed_buy_orders_enabled = true
+seed_buy_discount_percent = 8.0
+history_days_seeded = 30
+
+[build]
+sqlite_cache_size_kib = 262144
+sqlite_page_size_bytes = 32768
+sqlite_worker_threads = 24
+parallelism = 24

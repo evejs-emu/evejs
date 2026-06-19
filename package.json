@@ -1,0 +1,15 @@
+{
+  "name": "evejs",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "setup": "SetupEveJS.bat",
+    "database:create": "tools\\DatabaseCreator\\CreateDatabase.bat",
+    "release:verify": "node tools\\ReleaseGuard\\verify-public-release.js",
+    "datasync:sde": "node scripts/DataSync/sync-jsonl-local-static-data.js"
+  },
+  "dependencies": {
+    "yaml": "^2.8.3"
+  }
+}

@@ -1,0 +1,32 @@
+# Standalone EvEJS market daemon config.
+# The main server will proxy to this later. For now this stays standalone.
+
+[network]
+# Human-friendly HTTP diagnostics and admin API.
+# Keep this on 127.0.0.1 for local-only use.
+# Change to 0.0.0.0 or a LAN IP if you want another machine to reach it.
+host = "127.0.0.1"
+port = 41110
+
+[rpc]
+# Internal service-style RPC listener.
+# This is the recommended transport for the future Node marketProxy bridge.
+enabled = true
+host = "127.0.0.1"
+port = 41111
+
+[storage]
+# This must point at a database built by tools/market-seed.
+database_path = "data/generated/market.sqlite"
+
+[runtime]
+# Region summaries are always warmed at startup.
+# Station and system summaries stay lazy and are cached after first use.
+cache_station_summaries = true
+cache_system_summaries = true
+station_summary_cache_capacity = 256
+system_summary_cache_capacity = 256
+order_book_cache_capacity = 2048
+
+[logging]
+log_level = "info"

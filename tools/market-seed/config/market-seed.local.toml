@@ -1,0 +1,48 @@
+# Standalone EvEJS market seed config.
+# This file controls how the seeder builds market.sqlite for the standalone market server.
+
+[input]
+# Where the seeder reads EvEJS market/static data from.
+static_data_dir = "../../server/src/newDatabase/data"
+
+[output]
+# Where the finished SQLite database gets written.
+database_path = "../../externalservices/market-server/data/generated/market.sqlite"
+
+[seed]
+# Each selected station starts with this many units of each selected market item.
+default_quantity_per_station_type = 5000
+
+# Seeded sell prices start from basePrice when available, then get adjusted.
+seed_markup_percent = 8.0
+# Small price difference from station to station.
+station_jitter_percent = 1.5
+# Small price difference at the region level.
+region_jitter_percent = 2.0
+# Minimum allowed seeded price.
+price_floor = 100.0
+
+# Backup pricing rules when an item has no normal basePrice in the data.
+fallback_base_price = 10000.0
+fallback_type_modulus = 250
+fallback_type_step = 250.0
+
+# Optional seeded buy orders.
+# Set this to true if you want the seeder to create buy orders too.
+# After changing it, run the seeder again so it rebuilds market.sqlite.
+seed_buy_orders_enabled = true
+# How far below the base-price direction the seeded buy orders should sit.
+seed_buy_discount_percent = 8.0
+
+# How many fake history days to create for market-history charts.
+history_days_seeded = 30
+
+[build]
+# Performance only. Bigger cache can help large builds if you have the RAM.
+sqlite_cache_size_kib = 262144
+# Large page size helps the huge full-universe market build.
+sqlite_page_size_bytes = 32768
+# SQLite can use helper threads for some internal work such as index builds.
+sqlite_worker_threads = 24
+# Rust-side parallel work such as summary generation uses this many workers.
+parallelism = 24

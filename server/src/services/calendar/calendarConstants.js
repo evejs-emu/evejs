@@ -1,0 +1,96 @@
+const path = require("path");
+
+const database = require(path.join(__dirname, "../../newDatabase"));
+
+const CALENDAR_EVENTS_TABLE = "calendarEvents";
+const CALENDAR_RESPONSES_TABLE = "calendarResponses";
+
+const OWNER_SYSTEM_ID = 1;
+const CORP_ROLE_CHAT_MANAGER = 36028797018963968n;
+
+const CALENDAR_TAG_PERSONAL = 1;
+const CALENDAR_TAG_CORP = 2;
+const CALENDAR_TAG_ALLIANCE = 4;
+const CALENDAR_TAG_CCP = 8;
+const CALENDAR_TAG_AUTOMATED = 16;
+
+const EVENT_RESPONSE_UNINVITED = 0;
+const EVENT_RESPONSE_DELETED = 1;
+const EVENT_RESPONSE_DECLINED = 2;
+const EVENT_RESPONSE_UNDECIDED = 3;
+const EVENT_RESPONSE_ACCEPTED = 4;
+const EVENT_RESPONSE_MAYBE = 5;
+
+const CALENDAR_VIEW_RANGE_IN_MONTHS = 12;
+const CALENDAR_START_YEAR = 2003;
+const CALENDAR_MAX_TITLE_SIZE = 40;
+const CALENDAR_MAX_DESCRIPTION_SIZE = 500;
+const CALENDAR_MAX_INVITEES = 50;
+
+const SCOPE_PERSONAL = "personal";
+const SCOPE_CORPORATION = "corporation";
+const SCOPE_ALLIANCE = "alliance";
+const SCOPE_GLOBAL = "global";
+
+const SOURCE_PLAYER = "player";
+const SOURCE_SERVER = "server";
+
+const DEFAULT_EVENT_STATE = Object.freeze({
+  version: 1,
+  nextEventID: 980000000000,
+  events: {},
+});
+
+const DEFAULT_RESPONSE_STATE = Object.freeze({
+  version: 1,
+  responses: {},
+});
+
+function ensureCalendarTablesExist() {
+  if (!database.read(CALENDAR_EVENTS_TABLE, "/").success) {
+    database.write(
+      CALENDAR_EVENTS_TABLE,
+      "/",
+      JSON.parse(JSON.stringify(DEFAULT_EVENT_STATE)),
+    );
+  }
+  if (!database.read(CALENDAR_RESPONSES_TABLE, "/").success) {
+    database.write(
+      CALENDAR_RESPONSES_TABLE,
+      "/",
+      JSON.parse(JSON.stringify(DEFAULT_RESPONSE_STATE)),
+    );
+  }
+}
+
+module.exports = {
+  CALENDAR_EVENTS_TABLE,
+  CALENDAR_RESPONSES_TABLE,
+  OWNER_SYSTEM_ID,
+  CORP_ROLE_CHAT_MANAGER,
+  CALENDAR_TAG_PERSONAL,
+  CALENDAR_TAG_CORP,
+  CALENDAR_TAG_ALLIANCE,
+  CALENDAR_TAG_CCP,
+  CALENDAR_TAG_AUTOMATED,
+  EVENT_RESPONSE_UNINVITED,
+  EVENT_RESPONSE_DELETED,
+  EVENT_RESPONSE_DECLINED,
+  EVENT_RESPONSE_UNDECIDED,
+  EVENT_RESPONSE_ACCEPTED,
+  EVENT_RESPONSE_MAYBE,
+  CALENDAR_VIEW_RANGE_IN_MONTHS,
+  CALENDAR_START_YEAR,
+  CALENDAR_MAX_TITLE_SIZE,
+  CALENDAR_MAX_DESCRIPTION_SIZE,
+  CALENDAR_MAX_INVITEES,
+  SCOPE_PERSONAL,
+  SCOPE_CORPORATION,
+  SCOPE_ALLIANCE,
+  SCOPE_GLOBAL,
+  SOURCE_PLAYER,
+  SOURCE_SERVER,
+  DEFAULT_EVENT_STATE,
+  DEFAULT_RESPONSE_STATE,
+  ensureCalendarTablesExist,
+};

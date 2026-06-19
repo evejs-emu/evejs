@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Eden Store Editor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local Store Authority</p>
+          <h1>New Eden Store Editor</h1>
+          <p class="lede">
+            Edit the cache-backed store catalog, fast checkout, quick-pay tokens,
+            and runtime purchase state without touching the live code paths.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button id="reloadButton" class="ghost-button">Reload</button>
+          <button id="saveAllButton" class="primary-button">Save Store JSON</button>
+        </div>
+      </header>
+
+      <section class="summary-grid" id="summaryGrid"></section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Runtime Overrides</p>
+            <h2>Store Config</h2>
+          </div>
+          <button id="saveConfigButton" class="secondary-button">Save Config</button>
+        </div>
+        <form id="configForm" class="config-grid"></form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Authority</p>
+            <h2>Store JSON</h2>
+          </div>
+          <span class="hint">Saved to <code>server/src/newDatabase/data/newEdenStore/</code></span>
+        </div>
+        <textarea id="authorityEditor" class="json-editor" spellcheck="false"></textarea>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Runtime</p>
+            <h2>Purchase + Entitlement State</h2>
+          </div>
+          <span class="hint">Saved to <code>server/src/newDatabase/data/newEdenStoreRuntime/</code></span>
+        </div>
+        <textarea id="runtimeEditor" class="json-editor" spellcheck="false"></textarea>
+      </section>
+
+      <footer class="status-bar" id="statusBar">Loading store editor...</footer>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

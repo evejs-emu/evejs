@@ -1,0 +1,31 @@
+{
+  "name": "blue.dll",
+  "description": "Local patch recipe for the supported EvEJS client build.",
+  "supportedBuild": 3396210,
+  "source": {
+    "filename": "blue.dll",
+    "size": 12078736,
+    "sha256": "24e8368262e565bbf98001488007a78202657031cd8515f89029a36c89052886"
+  },
+  "patches": [
+    {
+      "offset": 2051561,
+      "offsetHex": "0x001F4DE9",
+      "description": ".text branch opcode byte (0F 84 -> 0F 85, JE -> JNE)",
+      "beforeHex": "84",
+      "afterHex": "85"
+    }
+  ],
+  "peRules": {
+    "requirePE32OrPE32Plus": true,
+    "stripAuthenticodeSecurityDirectory": true,
+    "recalculateChecksum": true
+  },
+  "knownPatchedVariants": [
+    {
+      "name": "legacy signed EvEJS patch",
+      "size": 12078736,
+      "sha256": "4fc73eac6b5884a0a3d759afd04b14626ef3bb90dde8dc73703f958b611473f8"
+    }
+  ]
+}
