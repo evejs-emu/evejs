@@ -1,3 +1,6 @@
+# Please do not use this repository, as it is outdated!
+# refer to the discord: https://discord.gg/H5V77HZF9n
+
 # EvEJS
 
 EvEJS is a local EVE Online emulator for research, preservation, and private
